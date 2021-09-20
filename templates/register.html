@@ -1,0 +1,114 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Register</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+	<link rel="stylesheet" href="{% static 'css/style3.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+	<div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <form method="POST" class="register-form" id="register-form">
+							{% csrf_token %}
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="first_name" id="first_name" placeholder="First Name" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="last_name" id="last_name" placeholder="Last Name" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="username" id="username" placeholder="Registration Number" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password1" id="pass" placeholder="Password" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="password2" id="re_pass" placeholder="Password Confirm" required/>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register" required/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="{% static 'images/vote.png' %}" alt="sing up image"></figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+	
+	<footer class="footer" style="background: rgb(25,25,25)">
+		<div class="container" style="background: rgb(25,25,25)">
+			<div class="row">
+				<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+					<h2 class="footer-heading">UZ online</h2>
+					<p>A voting space at your desired comfort without the need of site presence.</p>
+				</div>
+				
+				<div class="col-md-6 col-lg-3 pl-lg-5 mb-4 mb-md-0">
+					<h2 class="footer-heading">Quick Links</h2>
+					<ul class="list-unstyled">
+		  <li><a href="\" class="py-2 d-block">Home</a></li>
+          <li><a href="\about" class="py-2 d-block">About</a></li>
+          <li>Register</li>
+		  <li><a href="\accounts/login" class="py-2 d-block">Login</a></li>
+		  <li><a href="\admin\" class="py-2 d-block">Admin</a></li>
+		</ul>
+				</div>
+				<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+					<h2 class="footer-heading">Have a Query?</h2>
+					<div class="block-23 mb-3">
+		  <ul>
+			<li><span class="icon fa fa-map"></span><span class="text">630 Churchill Avenue, Harare, Zimbabwe</span></li>
+			<li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+263 746 345 123</span></a></li>
+			<li><a href="mailto:uzonlinevoting@uz.com"><span class="icon fa fa-paper-plane"></span><span class="text">uzonlinevoting@uz.com</span></a></li>
+		  </ul>
+		</div>
+				</div>
+			</div>
+			<div class="row mt-5">
+	  <div class="col-md-12 text-center">
+
+		<p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All rights reserved</p>
+	  </div>
+	</div>
+		</div>
+	</footer>	
+	<script src="{% static 'js/main3.js' %}"></script>
+	<div class="messages">
+		{% for message in messages %}
+			<script type="text/javascript">
+				alert('{{message}}')
+			</script>
+		{% endfor %}
+		
+	</div>
+</body>
+</html>
